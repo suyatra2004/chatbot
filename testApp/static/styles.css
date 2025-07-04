@@ -1,0 +1,150 @@
+/* Using 'Poppins' for a clean, modern look and 'Montserrat' for the header for impact. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Montserrat:wght@700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif; /* Changed global font */
+  box-sizing: border-box; /* Added for better box model handling */
+}
+
+html {
+  --scrollbarBG: #f0f0f0; /* Lighter scrollbar background */
+  --thumbBG: #6c5ce7; /* A pleasant purple for the scrollbar thumb */
+}
+
+body {
+  background: #e0e0e0; /* Slightly softer background */
+  display: flex; /* Centering the card */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+
+body .card {
+  height: 80vh; /* Relative to viewport height for better scaling */
+  width: 350px; /* Fixed width for better control on smaller screens */
+  max-width: 90%; /* Max width for responsiveness */
+  background-color: white;
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtler shadow */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+body .card #header {
+  height: 60px; /* Fixed height for header */
+  background: #333; /* Darker header for contrast */
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+body .card #header h1 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif; /* Changed header font */
+  font-size: 1.8em; /* Larger, more impactful header font */
+  margin: 0; /* Remove default margin */
+}
+
+body .card #message-section::-webkit-scrollbar {
+  width: 8px; /* Slightly thinner scrollbar */
+}
+
+body .card #message-section {
+  flex-grow: 1; /* Allows message section to take available space */
+  padding: 15px 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body .card #message-section::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+body .card #message-section::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 10px; /* More rounded scrollbar thumb */
+  border: 2px solid var(--scrollbarBG);
+}
+
+body .card #message-section #bot,
+body .card #message-section #user {
+  position: relative;
+  min-height: 35px; /* Minimum height for messages */
+  background-color: #f0f0f0; /* Light background for bot messages */
+  border-radius: 15px 15px 15px 0; /* Softer border-radius */
+  padding: 10px 15px;
+  margin: 10px 0;
+  max-width: 85%;
+  word-wrap: break-word;
+  color: #333; /* Darker text for readability */
+  font-size: 0.95em; /* Slightly larger message font */
+  line-height: 1.4;
+}
+
+body .card #message-section #user {
+  background-color: #6c5ce7; /* Purple background for user messages */
+  color: #fff; /* White text for user messages */
+  border-radius: 15px 15px 0 15px; /* Softer border-radius */
+  float: right;
+  clear: both; /* Ensure messages don't overlap */
+}
+
+body .card #message-section .message {
+  clear: both;
+}
+
+body .card #input-section {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+
+body .card #input-section input {
+  flex-grow: 1; /* Input takes up available space */
+  outline: none;
+  height: 45px; /* Taller input field */
+  border: 1px solid #ddd; /* Softer border */
+  border-radius: 25px; /* Rounded input field */
+  padding: 0 15px;
+  font-size: 1em; /* Readable font size for input */
+  margin-right: 10px;
+}
+
+body .card .send {
+  background: #6c5ce7; /* Purple send button */
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; /* Circular button */
+  width: 45px; /* Fixed width */
+  height: 45px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+body .card .send:hover {
+  background-color: #5a4acb; /* Slightly darker on hover */
+}
+
+body .card .send .circle {
+  width: auto; /* Not needed as parent handles size */
+  height: auto; /* Not needed as parent handles size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .card .send .circle i {
+  font-size: 1.5em; /* Larger icon */
+  color: #fff; /* White icon */
+  margin: 0; /* Remove specific margins */
+}
